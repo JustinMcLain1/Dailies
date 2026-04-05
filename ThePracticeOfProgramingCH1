@@ -42,3 +42,8 @@ Exercise 1-3. Read this code aloud:
 if (open("SMRHSHSCRTCH", O_CREAT | O_WRONLY, 0644) < 0) {
     // handle error
 }
+
+
+//-----------------------------
+
+1.2 Exercises
