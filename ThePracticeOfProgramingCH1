@@ -48,7 +48,7 @@ if (open("SMRHSHSCRTCH", O_CREAT | O_WRONLY, 0644) < 0) {
 
 1.2 Exercises
 
-Exercise 1-4. 
+Exercise 1-4 Improve the following code:
 if ( !(c = 'y') || (c = 'Y') ) {
     return;
 }
@@ -76,3 +76,34 @@ if (val & 1) {
 } else {
     bit = 0;
 } // This can be simplified to: bit = (val & 1) ? 1 : 0;
+
+Exercise 1-5. Whats wrong with this excerpt?
+?  int read(int *ip) {
+?      scanf("%d" , ip) ;    
+?      return *ip;
+?  }
+?  insert(&graph [vert] , read(&val ) , read(&ch)) ;
+
+// The issue with this code is that the function 'read' is defined to take a pointer to an integer and read a value into it using 'scanf'. 
+// However, the function is being called with '&val' and '&ch', which are likely not pointers to integers. This can lead to undefined behavior and 
+// potential crashes. Additionally, the function name 'read' is not descriptive of its purpose, and it may be better 
+// to use a more specific name like 'read_integer' to clarify its functionality.
+
+Exercise 1-6. List all the different outputs this could produce with various orders of
+evaluation:
+? n = 1;
+? printf("%d %d\n" , n++, n++) ;
+// The output of this code can vary depending on the order of evaluation of the arguments in the printf function.
+// Possible outputs include:
+// 1. "1 2" - if the first n++ is evaluated before the second n++
+// 2. "2 1" - if the second n++ is evaluated before the first n++
+// 3. "1 1" - if both n++ are evaluated at the same time (though this is less likely due to the nature of post-increment)
+// 4. "2 2" - if both n++ are evaluated at the same time (though this is less likely due to the nature of post-increment)
+// The actual output can be unpredictable and may vary between different compilers or even different runs of the
+//  same program due to the undefined behavior
+
+//A better way to right this this would be to break it into seperete lines to ensure a defined order of evaluation:
+n = 1;
+printf("%d ", n); // Output the current value of n
+n++; // Increment n after printing
+printf("%d\n", n); // Output the new value of n after incrementing 
