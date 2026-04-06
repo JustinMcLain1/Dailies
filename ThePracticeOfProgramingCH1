@@ -17,7 +17,7 @@ Exercise 1-1. Comment on the choice of names and values in the following code.
 Exercise 1-2. Improve this function:
 ? int smaller(char *s , char *t) {
 ?   if (strcmp(s , t) < 1)
-?       return 1;
+?       return 1;   
 ?   else
 ?       return 0;
 
@@ -47,3 +47,32 @@ if (open("SMRHSHSCRTCH", O_CREAT | O_WRONLY, 0644) < 0) {
 //-----------------------------
 
 1.2 Exercises
+
+Exercise 1-4. 
+if ( !(c = 'y') || (c = 'Y') ) {
+    return;
+}
+
+length = (length < BUFSIZE) ? length : BUFSIZE;
+flag = flag ? 0:1;
+qoute = (*line =="") ? 1: 0;
+
+if (val & 1)
+    bit = 1;
+else
+    bit = 0;
+
+// The code can be improved by correcting the logic in the conditions and by using more descriptive variable names.
+if (c != 'y' && c != 'Y') {
+    return;
+}
+
+// The original code uses the assignment operator '=' instead of the equality operator '==' in the condition, which is a common mistake.
+length = (length < BUFSIZE) ? length : BUFSIZE; // This line is fine as it is.
+flag = flag ? 0 : 1; // This line is also fine as it is, but it can be simplified to: flag = !flag;
+qoute = (*line == "") ? 1 : 0; // This line is fine as it is
+if (val & 1) {
+    bit = 1;
+} else {
+    bit = 0;
+} // This can be simplified to: bit = (val & 1) ? 1 : 0;
