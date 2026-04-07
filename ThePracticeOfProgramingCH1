@@ -46,7 +46,7 @@ if (open("SMRHSHSCRTCH", O_CREAT | O_WRONLY, 0644) < 0) {
 
 //-----------------------------
 
-1.2 Exercises
+1 .2 Expressions and Statements -- Exercise
 
 Exercise 1-4 Improve the following code:
 if ( !(c = 'y') || (c = 'Y') ) {
@@ -107,3 +107,7 @@ n = 1;
 printf("%d ", n); // Output the current value of n
 n++; // Increment n after printing
 printf("%d\n", n); // Output the new value of n after incrementing 
+
+//------------------------------
+
+1.3 Consistency and Idioms Exercise
