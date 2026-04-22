@@ -111,3 +111,64 @@ printf("%d\n", n); // Output the new value of n after incrementing
 //------------------------------
 
 1.3 Consistency and Idioms Exercise
+
+    EXERCISE 1-7. Write this code to be cleaner and more consistent:
+  if (istty(stdin))
+  else if (istty(stdout))
+  else if (istty(stderr))
+  else return(O) ;
+
+  if ( retval ! = SUCCESS)
+  {
+  return (retval ) ;
+  }
+  I* All went well! */ 
+  return SUCCESS;
+
+  for (k = O; k++ < 5 ; x += dx)
+  scanf("%lf" , &dx) ;
+
+  CLEANED UP CODE:
+  if (istty(stdin)) {
+    // handle stdin case
+  } else if (istty(stdout)) {
+    // handle stdout case
+  } else if (istty(stderr)) {
+    // handle stderr case
+  } else {
+    return 0; // Return 0 if none of the conditions are met
+  }
+
+  if (retval != SUCCESS) {
+    return retval; // Return the error code if retval is not SUCCESS
+  }
+  else {
+    return SUCCESS; // Return SUCCESS if everything went well
+  }
+
+  for (k = 0; k < 5; k++)
+    {
+        scanf("%lf", &dx); // Read a double value into dx
+        x += dx; // Update x by adding dx
+    }
+
+    //---------------
+
+    EXERCISE 1-8. Identify the errors in this java fragement and repair it by rewriting with
+    an idiomatic loop:
+
+    int count = 0;
+    while(count < total) {
+        count++;
+        if (this.getName(count) == nametabel.userName()) {
+            return (true);
+        }
+    }
+
+    Rewritten with an idiomatic loop:
+    for (int count = 0; count < total; count++) {
+        if (this.getName(count).equals(nametabel.userName())) {
+            return true; // Return true if a match is found
+        }
+    }
+    return false; // Return false if no match is found after the loop
