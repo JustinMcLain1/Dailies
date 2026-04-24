@@ -11,7 +11,7 @@ try:
     file_name = "daily_commit.txt"
 
     with open(file_name, "a") as f:
-        today = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        today = datetime.datetime.now().strftime("%Y-%m-%d")
         f.write(f"{today}\n")
 
     git = "/usr/bin/git"
