@@ -19,7 +19,9 @@ try:
     subprocess.run([git, "add", "."], check=True)
     subprocess.run([git, "commit", "-m", "Daily commit"], check=True)
     subprocess.run([git, "push", "origin", "main"], check=True)
-
+    
+    today = datetime.now()
+    print(today)
     print("Success")
 
 except Exception:
