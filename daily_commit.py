@@ -20,7 +20,7 @@ try:
     subprocess.run([git, "commit", "-m", "Daily commit"], check=True)
     subprocess.run([git, "push", "origin", "main"], check=True)
     
-    today = datetime.now()
+    today = datetime.datetime.now()
     print(today)
     print("Success")
 
